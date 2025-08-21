@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE workflow-forms PUBLIC "-//OpenKM//DTD Workflow Forms 2.1//EN"
+                                "http://www.openkm.com/dtd/workflow-forms-2.1.dtd">
+<workflow-forms>
+  <workflow-form task="inspection_technique">
+  <upload name="pieces_jointes" label="Pièces jointes"/>
+    <button name="accept" label="Accept" transition="accept" />
+  </workflow-form>
+</workflow-forms>

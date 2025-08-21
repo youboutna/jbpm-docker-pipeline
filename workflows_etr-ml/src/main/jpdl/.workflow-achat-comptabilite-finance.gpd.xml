@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root-container name="workflow-achat-comptabilite-finance" width="632" height="326">
+  <node name="Début commande" x="179" y="36" width="132" height="36">
+    <edge>
+      <label x="5" y="-10"/>
+    </edge>
+  </node>
+  <node name="Fin bon commande" x="170" y="232" width="132" height="36"/>
+  <node name="Saisie-bon-de-commande" x="175" y="115" width="132" height="36">
+    <edge>
+      <label x="5" y="-10"/>
+    </edge>
+  </node>
+</root-container>

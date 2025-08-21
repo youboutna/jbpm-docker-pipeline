@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE workflow-forms PUBLIC "-//OpenKM//DTD Workflow Forms 2.4//EN" 
+                              "http://www.openkm.com/dtd/workflow-forms-2.4.dtd">
+<workflow-forms>
+  <workflow-form task="Saisie_bon_de_commande">
+    <input name="po_number" label="Numéro de commande" type="text">
+      <validator type="regexp" parameter="^[A-Z0-9-]+$"/>
+    </input>
+    <input name="po_date" label="Date de commande" type="date"/>
+    <input name="supplier_name" label="Fournisseur" type="text"/>
+    <input name="supplier_nif" label="NIF" type="text"/>
+    <input name="supplier_email" label="Email fournisseur" type="text"/>
+    <input name="order_amount" label="Montant total TTC" type="text">
+      <validator type="regexp" parameter="^\d+(\.\d{1,2})?$"/>
+    </input>
+    <select name="currency" label="Devise">
+      <option label="EUR" value="EUR"/>
+      <option label="USD" value="USD"/>
+      <option label="GBP" value="GBP"/>
+      <option label="MAD" value="MAD"/>
+      <option label="Ouguiya MRU" value="MRU"/>
+    </select>
+    <textarea name="order_description" label="Description détaillée" height="100"/>
+    <upload name="attachments" label="Documents annexes"/>
+    <select name="validation_status" label="Statut de validation">
+      <option label="En attente" value="pending"/>
+      <option label="Approuvée" value="approved"/>
+      <option label="Rejetée" value="rejected"/>
+    </select>
+    <textarea name="validation_comments" label="Commentaires de validation" height="60"/>
+    <button name="validate" label="Valider" transition="validate" style="save"/>
+    <button name="reject" label="Rejeter" transition="reject" style="delete"/>
+  </workflow-form>
+  
+</workflow-forms>

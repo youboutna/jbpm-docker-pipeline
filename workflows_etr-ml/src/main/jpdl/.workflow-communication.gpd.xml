@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root-container name="communication.workflow" width="632" height="326">
+  <node name="start" x="150" y="25" width="140" height="40">
+    <edge>
+      <label x="5" y="-10"/>
+    </edge>
+  </node>
+  <node name="task-node-register" x="43" y="133" width="143" height="57">
+    <edge>
+      <label x="-44" y="18"/>
+    </edge>
+  </node>
+  <node name="task-node-distribute" x="331" y="135" width="152" height="53">
+    <edge>
+      <label x="5" y="-10"/>
+    </edge>
+  </node>
+  <node name="end" x="191" y="253" width="132" height="36"/>
+</root-container>

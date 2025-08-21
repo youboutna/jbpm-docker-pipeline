@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE workflow-forms PUBLIC "-//OpenKM//DTD Workflow Forms 2.4//EN" 
+                              "http://www.openkm.com/dtd/workflow-forms-2.4.dtd">
+<workflow-forms>
+  <workflow-form task="Distribution_interne">
+    <input name="reference" label="Référence courrier" type="text" readonly="true"/>
+    <select name="destinataire" label="Service destinataire">
+      <option label="Direction" value="direction"/>
+      <option label="Finances" value="finances"/>
+    </select>
+    <select name="urgence" label="Niveau d'urgence">
+      <option label="Normal" value="normal"/>
+      <option label="Urgent" value="urgent"/>
+      <option label="Très urgent" value="tres_urgent"/>
+    </select>
+    <textarea name="instructions" label="Instructions spéciales" height="60"/>
+    <button name="distribuer" label="Distribuer" transition="distribuer" style="save"/>
+    <button name="retour" label="Retour bureau" transition="retour" style="change"/>
+  </workflow-form>
+</workflow-forms>

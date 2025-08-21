@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE workflow-forms PUBLIC "-//OpenKM//DTD Workflow Forms 2.4//EN" 
+                              "http://www.openkm.com/dtd/workflow-forms-2.4.dtd">
+<workflow-forms>
+  <workflow-form task="Validation_juridique_du_contrat">
+    <input name="numero_contrat" label="Numéro contrat" type="text">
+      <validator type="regexp" parameter="^[A-Z0-9-]+$"/>
+    </input>
+    <select name="type_contrat" label="Type contrat">
+      <option label="Prestataire" value="prestataire"/>
+      <option label="Fournisseur" value="fournisseur"/>
+      <option label="Partenariat" value="partenariat"/>
+    </select>
+    <textarea name="parties_contrat" label="Parties" height="60"/>
+    <input name="date_signature" label="Date signature" type="date"/>
+    <textarea name="objet_contrat" label="Objet" height="80"/>
+    <input name="montant_contrat" label="Montant" type="text"/>
+    <select name="devise" label="Devise">
+      <option label="EUR" value="EUR"/>
+      <option label="USD" value="USD"/>
+      <option label="MAD" value="MAD"/>
+    </select>
+    <select name="validation_juridique" label="Avis juridique">
+      <option label="Favorable" value="favorable"/>
+      <option label="Avec réserves" value="reserves"/>
+      <option label="Défavorable" value="defavorable"/>
+    </select>
+    <textarea name="commentaires_juridique" label="Commentaires" height="60"/>
+    <button name="accepter" label="Valider contrat" transition="valider_contrat" style="save"/>
+    <button name="modifier" label="Demander modifications" transition="modifier_contrat" style="change"/>
+  </workflow-form>
+</workflow-forms>

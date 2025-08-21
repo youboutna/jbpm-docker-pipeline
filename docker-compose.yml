@@ -1,0 +1,59 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:14
+    container_name: jbpm_postgres
+    environment:
+      POSTGRES_USER: jbpm_console
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: jbpm_postgres
+    volumes:
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    ports:
+      - "5432:5432"
+    networks:
+      - jbpm-net
+
+  tomcat:
+    build:
+      context: ./tomcat
+      args:
+        TOMCAT_VERSION: "8.5.99" # or "8.5.99" for Tomcat 8
+    container_name: jbpm_tomcat
+    depends_on:
+      - postgres
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: jbpmdb
+      DB_USER: jbpm
+      DB_PASS: jbpm
+    volumes:
+      - ./tomcat/params.properties:/usr/local/tomcat/conf/params.properties:ro
+      - ./tomcat/tomcat-users.xsd:/usr/local/tomcat/conf/tomcat-users.xsd:ro
+      - ./tomcat/server.xml:/usr/local/tomcat/conf/server.xml:ro
+      - ./tomcat/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml:ro
+      - ./tomcat/jbpm-console.properties:/usr/local/webapps/tomcat/jbpm-console.properties:ro
+      - ./tomcat/jbpm-console.war:/usr/local/tomcat//webapps/jbpm-console.war:ro
+
+    ports:
+      - "8080:8080"
+    networks:
+      - jbpm-net
+
+  pgadmin:
+    image: dpage/pgadmin4:8
+    container_name: jbpm_pgadmin
+    depends_on:
+      - postgres
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com   # ✅ use valid email format
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    networks:
+      - jbpm-net
+networks:
+  jbpm-net:
+    driver: bridge

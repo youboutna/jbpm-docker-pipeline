@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process-definition 
+  xmlns="urn:jbpm.org:jpdl-3.2"
+name="workflow-achat-comptabilite-finance">
+  <start-state name="Début commande">
+		<transition to="Saisie-bon-de-commande"></transition>
+	</start-state>
+  <end-state name="Fin bon commande"/>
+  <task-node name="Saisie-bon-de-commande">
+    <task name="Saisie_bon_de_commande" >
+    <assignment actor-id="Achat_Group"></assignment>
+    </task>
+    <transition to="Fin bon commande" name="accept"/>
+  </task-node>
+</process-definition>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process-definition 
+  xmlns="urn:jbpm.org:jpdl-3.2"
+name="Workflow traitement communication">
+  <start-state name="start">
+    <transition to="register"/>
+  </start-state>
+  <end-state name="end"/>
+  <task-node name="Enregistrement courrier">
+    <task name="register" >
+    <assignment actor-id="Secreteriat_Group"></assignment>
+    </task>
+    <transition to="Distribution interne" name="accept"/>
+  </task-node>
+  <task-node name="Distribution interne">
+    <task name="Distribution_interne"  >
+    <assignment actor-id="Secreteriat_Group"></assignment>
+    </task>
+    <transition to="end" name="accept"/>
+  </task-node>
+</process-definition>

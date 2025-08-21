@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process-definition 
+  xmlns="urn:jbpm.org:jpdl-3.2"
+name="workflow-technique">
+  <start-state name="Début">
+    <transition to="Rapport d'inspection technique"/>
+  </start-state>
+  <end-state name="Fin"/>
+  <task-node name="Rapport d'inspection technique">
+    <task name="inspection_technique" >
+    <assignment actor-id="Technique_Group"></assignment>
+    </task>
+    <transition to="Fin" name="accept"/>
+  </task-node>
+</process-definition>
