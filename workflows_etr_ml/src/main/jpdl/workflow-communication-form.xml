@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE workflow-forms PUBLIC "-//OpenKM//DTD Workflow Forms 2.4//EN" 
+                              "http://www.openkm.com/dtd/workflow-forms-2.4.dtd">
+<workflow-forms>
+  <workflow-form task="register">
+    <input name="reference" label="Référence" type="text">
+      <validator type="regexp" parameter="[A-Z]{2}-[0-9]{4}"/>
+    </input>
+    <select name="type_courrier" label="Type de courrier">
+      <option label="Standard" value="standard"/>
+      <option label="Urgent" value="urgent"/>
+      <option label="Recommandé" value="recommandé"/>
+    </select>
+    <textarea name="objet" label="Objet" height="80"/>
+    <input name="date_reception" label="Date réception" type="date"/>
+    <select name="destination" label="Destination">
+      <option label="Secrétariat de Direction" value="secretariat"/>
+      <option label="Département Finances" value="finances"/>
+      <option label="Département Juridique" value="juridique"/>
+      <option label="Département Technique" value="technique"/>
+    </select>
+    <upload name="pieces_jointes" label="Pièces jointes"/>
+    <button name="enregistrer" label="Enregistrer" transition="Distribuer Courrier" style="save"/>
+  </workflow-form>
+</workflow-forms>
