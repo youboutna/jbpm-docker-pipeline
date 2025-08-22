@@ -20,6 +20,6 @@
       <option label="Département Technique" value="technique"/>
     </select>
     <upload name="pieces_jointes" label="Pièces jointes"/>
-    <button name="enregistrer" label="Enregistrer" transition="enregistrer" style="save"/>
+    <button name="enregistrer" label="Enregistrer" transition="Distribuer Courrier" style="save"/>
   </workflow-form>
 </workflow-forms>
