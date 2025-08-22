@@ -6,7 +6,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.hadratech</groupId>
-  <artifactId>workflows_etr_ml</artifactId>
+  <artifactId>workflows_etr-ml</artifactId>
   <version>1.0.0</version>
   <packaging>jar</packaging>
 
@@ -20,9 +20,6 @@
   </properties>
 
   <dependencies>
-    <!-- jBPM 3.x API -->
-    
-
     <!-- Logging -->
     <dependency>
       <groupId>commons-logging</groupId>

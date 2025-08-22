@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_USER: jbpm_console
       POSTGRES_PASSWORD: admin
-      POSTGRES_DB: jbpm_postgres
+      POSTGRES_DB: jbpm_console
     volumes:
       - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
     ports:
