@@ -30,12 +30,12 @@ services:
       DB_USER: jbpm
       DB_PASS: jbpm
     volumes:
+      - ./tomcat/jbpm-console.war:/usr/local/tomcat//webapps/jbpm-console.war:ro
       - ./tomcat/params.properties:/usr/local/tomcat/conf/params.properties:ro
       - ./tomcat/tomcat-users.xsd:/usr/local/tomcat/conf/tomcat-users.xsd:ro
       - ./tomcat/server.xml:/usr/local/tomcat/conf/server.xml:ro
       - ./tomcat/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml:ro
       - ./tomcat/jbpm-console.properties:/usr/local/webapps/tomcat/jbpm-console.properties:ro
-      - ./tomcat/jbpm-console.war:/usr/local/tomcat//webapps/jbpm-console.war:ro
 
     ports:
       - "8080:8080"
